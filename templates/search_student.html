@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Student</title>
+</head>
+<body>
+    <h1>Search Student</h1>
+    <form method="POST">
+        <label for="roll_num">Enter Roll Number:</label><br>
+        <input type="number" id="roll_num" name="roll_num" required><br><br>
+        <input type="submit" value="Search">
+    </form>
+
+    {% if student %}
+    <h2>Student Details</h2>
+    <p>Name: {{ student[1] }}</p>
+    <p>Roll Number: {{ student[2] }}</p>
+    <p>Maths Marks: {{ student[3] }}</p>
+    <p>Science Marks: {{ student[4] }}</p>
+    <p>English Marks: {{ student[5] }}</p>
+    <p>Total Marks: {{ student[6] }}</p>
+    <p>Average: {{ student[7] }}</p>
+    <p>Grade: {{ student[8] }}</p>
+    {% else %}
+    <p>No student found with this roll number.</p>
+    {% endif %}
+</body>
+</html>
